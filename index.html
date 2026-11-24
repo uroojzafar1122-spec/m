@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arooj Fatima | Functional Biomaterials &amp; Cell Culture</title>
+<meta name="description" content="Arooj Fatima — Functional Biomaterials, Cell Culture &amp; Biohybrid Systems. M.Sc. Biotechnology Student, Hochschule Offenburg.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Palette grounded in the subject: crystal-violet Gram stain + agar-plate amber */
+    --bg-dark:#241132;
+    --bg-dark2:#7A2E5C;
+    --text-light:#FFFFFF;
+    --text-dim:#DCC3DA;
+    --teal:#6E2E63;
+    --teal-deep:#4A1F42;
+    --teal-glow:rgba(110,46,99,.16);
+    --teal-glow-tint:#F4EAF2;
+    --gold:#B8842A;
+    --gold-tint:#FBF1DE;
+    --paper:#FBF8F4;
+    --paper-tint:#F6EFF4;
+    --card:#FFFFFF;
+    --ink:#241B2E;
+    --ink-soft:#5C5265;
+    --line:#E6DCE4;
+    --brick:#B8842A;
+    --brick-tint:#FBF1DE;
+    --accent-on-dark:#E8B84B;
+    --mono:'IBM Plex Mono', monospace;
+    --serif:'Fraunces', serif;
+    --sans:'Inter', sans-serif;
+    --ease:cubic-bezier(.22,.9,.32,1);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  ::selection{ background:var(--teal-glow); color:var(--teal-deep); }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
+  img{ max-width:100%; display:block; }
+
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
+  @keyframes popIn{ from{opacity:0; transform:scale(.9);} to{opacity:1; transform:scale(1);} }
+  @keyframes floatGlow{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-10px);} }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+
+  /* ============ NAV ============ */
+  nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(28,15,38,.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 32px; }
+  .logo{ font-family:var(--serif); font-weight:600; font-size:1.15rem; color:#fff; letter-spacing:.02em; }
+  .logo span{ color:var(--teal); font-style:italic; }
+  .nav-links{ display:flex; gap:26px; list-style:none; }
+  .nav-links a{ font-size:13.5px; color:var(--text-dim); font-weight:500; transition:color .2s ease; }
+  .nav-links a:hover{ color:#fff; }
+  .nav-right{ display:flex; align-items:center; gap:14px; }
+  .lang-toggle{ display:flex; border:1px solid rgba(255,255,255,.18); border-radius:20px; overflow:hidden; }
+  .lang-toggle button{
+    font-family:var(--mono); font-size:11px; letter-spacing:.05em; background:transparent; color:var(--text-dim);
+    border:none; padding:6px 13px; cursor:pointer; transition:background .15s ease, color .15s ease;
+  }
+  .lang-toggle button.active{ background:var(--teal); color:#fff; font-weight:600; }
+  .lang-toggle button:not(.active):hover{ color:#fff; }
+  .nav-toggle{ display:none; }
+  @media (max-width:820px){
+    .nav-links{ display:none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    background:
+      radial-gradient(ellipse 60% 70% at 85% 0%, rgba(255,255,255,.08) 0%, transparent 60%),
+      linear-gradient(150deg, var(--bg-dark) 0%, var(--teal) 55%, var(--bg-dark2) 100%);
+    color:var(--text-light);
+    padding:76px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-wave{
+    position:absolute; left:0; right:0; bottom:-1px; width:100%; height:60px; line-height:0;
+  }
+  .hero .wrap{ display:grid; grid-template-columns:1fr 220px; gap:48px; align-items:center; position:relative; z-index:1; }
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--accent-on-dark); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+    animation:fadeUp .7s var(--ease) both;
+  }
+  .hero-eyebrow::before{ content:""; width:22px; height:1px; background:var(--accent-on-dark); display:inline-block; }
+  .hero h1{
+    font-family:var(--serif); font-weight:600; font-size:3.1rem; line-height:1.05; color:#fff;
+    letter-spacing:-.01em; animation:fadeUp .7s var(--ease) .06s both;
+  }
+  .hero h1 em{
+    font-style:italic; font-weight:500; color:var(--accent-on-dark);
+  }
+  .hero .subtitle{
+    margin-top:16px; font-size:1.08rem; color:var(--text-dim); font-weight:500; max-width:52ch;
+    animation:fadeUp .7s var(--ease) .12s both;
+  }
+  .hero .loc-line{
+    margin-top:14px; font-size:14px; color:var(--text-dim);
+    animation:fadeUp .7s var(--ease) .18s both;
+  }
+  .hero .loc-line b{ color:#fff; font-weight:600; }
+  .hero-cta{ margin-top:30px; display:flex; gap:14px; flex-wrap:wrap; animation:fadeUp .7s var(--ease) .24s both; }
+  .btn{
+    font-family:var(--sans); font-size:13.5px; font-weight:600; padding:12px 22px; border-radius:6px;
+    display:inline-flex; align-items:center; gap:8px; transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    cursor:pointer; border:none;
+  }
+  .btn-primary{ background:linear-gradient(135deg, var(--gold), #8A6018); color:#fff; box-shadow:0 8px 22px -8px rgba(184,132,42,.5); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 26px -8px rgba(184,132,42,.65); }
+  .btn-ghost{ background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.35); box-shadow:none; }
+  .btn-ghost:hover{ background:rgba(255,255,255,.16); transform:translateY(-2px); border-color:rgba(255,255,255,.6); }
+
+  .portrait-wrap{ position:relative; animation:popIn .8s var(--ease) .1s both; z-index:1; }
+  .portrait{
+    width:220px; height:220px; border-radius:14px; overflow:hidden; position:relative; z-index:1;
+    border:4px solid #fff;
+    box-shadow:0 24px 55px -18px rgba(0,0,0,.5), 0 0 0 8px rgba(232,184,75,.22);
+    animation:floatGlow 6s ease-in-out infinite;
+  }
+  .portrait img{ width:100%; height:100%; object-fit:cover; object-position:center 18%; }
+  .badge-pill{
+    position:absolute; bottom:-14px; left:50%; transform:translateX(-50%);
+    background:linear-gradient(120deg, var(--gold), var(--accent-on-dark)); border:1px solid rgba(255,255,255,.7); color:#fff;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.04em; font-weight:600; padding:6px 14px; border-radius:20px;
+    white-space:nowrap; box-shadow:0 8px 18px -6px rgba(0,0,0,.4); z-index:2;
+  }
+
+  .stat-row{
+    margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+    animation:fadeUp .8s var(--ease) .3s both; position:relative; z-index:1;
+  }
+  .stat-card{
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.22); border-radius:10px;
+    padding:20px 16px; text-align:center; transition:transform .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .stat-card:hover{ transform:translateY(-4px); border-color:var(--accent-on-dark); background:rgba(255,255,255,.16); }
+  .stat-icon{
+    width:38px; height:38px; margin:0 auto 10px; border-radius:50%;
+    background:rgba(232,184,75,.2); display:flex; align-items:center; justify-content:center; font-size:1.15rem;
+  }
+  .stat-num{ font-family:var(--serif); font-weight:700; font-size:1.35rem; color:#fff; }
+  .stat-label{ font-family:var(--mono); font-size:10.5px; color:var(--text-dim); margin-top:4px; letter-spacing:.03em; }
+
+  @media (max-width:820px){
+    .hero .wrap{ grid-template-columns:1fr; text-align:center; }
+    .portrait-wrap{ justify-self:center; }
+    .hero .subtitle, .hero .loc-line{ margin-left:auto; margin-right:auto; }
+    .hero-cta{ justify-content:center; }
+    .stat-row{ grid-template-columns:repeat(2,1fr); }
+    .hero h1{ font-size:2.3rem; }
+  }
+
+  /* ============ SECTION SHELL ============ */
+  section{ padding:84px 0; border-bottom:1px solid var(--line); opacity:0; transform:translateY(24px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+  main section:nth-of-type(even):not(.contact-section){ background:var(--paper-tint); }
+  section.visible{ opacity:1; transform:translateY(0); }
+  section:last-of-type{ border-bottom:none; }
+  .sec-eyebrow{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-deep);
+    display:inline-flex; align-items:center; gap:8px; margin-bottom:16px;
+    background:var(--teal-glow-tint); border:1px solid rgba(15,118,110,.22); padding:5px 13px; border-radius:20px;
+  }
+  .sec-eyebrow::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--gold); display:inline-block; }
+  .sec-title{ font-family:var(--serif); font-weight:600; font-size:2.1rem; color:var(--ink); margin-bottom:40px; }
+  .sec-title em{ color:var(--teal-deep); font-style:italic; font-weight:500; }
+
+  /* ============ ABOUT ============ */
+  .about-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:32px; align-items:stretch; }
+  .about-card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px; padding:30px 30px 26px;
+    border-top:4px solid var(--gold); box-shadow:0 18px 40px -28px rgba(36,17,50,.35);
+  }
+  .about-card-label{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--gold);
+    margin-bottom:22px; display:flex; align-items:center; gap:8px;
+  }
+  .about-card-label::before{ content:""; width:16px; height:1px; background:var(--gold); display:inline-block; }
+  .info-list{ display:flex; flex-direction:column; }
+  .info-item{ display:flex; align-items:flex-start; gap:14px; padding:13px 0; border-bottom:1px solid var(--line); }
+  .info-item:last-child{ border-bottom:none; padding-bottom:0; }
+  .info-item:first-child{ padding-top:0; }
+  .info-icon{
+    width:34px; height:34px; flex-shrink:0; border-radius:9px; background:var(--teal-glow-tint);
+    display:flex; align-items:center; justify-content:center; font-size:15px;
+  }
+  .info-item .il-label{ font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-soft); }
+  .info-item .il-value{ font-size:14.5px; font-weight:600; margin-top:2px; color:var(--ink); }
+  .info-item .il-value a{ color:var(--teal-deep); }
+  .about-feature{
+    position:relative; background:linear-gradient(165deg, var(--teal-glow-tint) 0%, var(--card) 55%);
+    border:1px solid var(--line); border-radius:14px; padding:38px 36px 30px; display:flex; flex-direction:column;
+    justify-content:center;
+  }
+  .about-feature::before{
+    content:"“"; position:absolute; top:14px; left:26px; font-family:var(--serif); font-size:4.2rem;
+    color:var(--gold); opacity:.35; line-height:1; font-style:italic;
+  }
+  .about-text p{ position:relative; font-size:16.5px; color:var(--ink-soft); max-width:60ch; line-height:1.75; z-index:1; }
+  .about-highlights{ margin-top:24px; display:flex; flex-wrap:wrap; gap:9px; }
+  .about-highlights .tag{ background:var(--gold-tint); color:var(--teal-deep); border-color:rgba(184,132,42,.28); font-weight:600; }
+  @media (max-width:760px){
+    .about-grid{ grid-template-columns:1fr; }
+    .about-feature::before{ display:none; }
+  }
+
+  /* ============ EXPERIENCE ============ */
+  .timeline{ position:relative; }
+  .job{
+    position:relative; padding:26px 28px; margin-bottom:22px; background:var(--card); border:1px solid var(--line);
+    border-left:3px solid var(--teal); border-radius:8px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .job:hover{ transform:translateX(4px); box-shadow:0 14px 30px -18px rgba(110,46,99,.3); }
+  .job-head{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:12px; }
+  .job-role{ font-family:var(--serif); font-weight:600; font-size:1.2rem; }
+  .job-org{ color:var(--teal-deep); font-weight:600; font-size:.95rem; margin-top:3px; }
+  .job-date{ font-family:var(--mono); font-size:12px; color:var(--ink-soft); white-space:nowrap; }
+  .job ul{ list-style:none; display:flex; flex-direction:column; gap:7px; margin-bottom:14px; }
+  .job ul li{ position:relative; padding-left:18px; font-size:14.5px; color:var(--ink-soft); }
+  .job ul li::before{ content:""; position:absolute; left:0; top:8px; width:6px; height:1.5px; background:var(--teal); }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:7px; }
+  .tag{
+    font-family:var(--mono); font-size:11px; color:var(--teal-deep); background:var(--teal-glow-tint);
+    padding:4px 10px; border-radius:20px; border:1px solid rgba(110,46,99,.18);
+  }
+  .subblock-title{ font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); margin:34px 0 16px; }
+  .mini-job{ padding:16px 20px; background:var(--gold-tint); border-radius:8px; margin-bottom:12px; border-left:3px solid var(--gold); }
+  .mini-job .job-role{ font-size:1rem; }
+  .mini-job p{ font-size:13.5px; color:var(--ink-soft); margin-top:6px; }
+
+  /* ============ EDUCATION ============ */
+  .edu-card{
+    background:var(--card); border:1px solid var(--line); border-radius:8px; padding:26px 28px; margin-bottom:20px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .edu-card:hover{ transform:translateY(-3px); box-shadow:0 14px 30px -18px rgba(110,46,99,.24); }
+  .edu-card ul{ list-style:none; margin-top:12px; display:flex; flex-direction:column; gap:6px; }
+  .edu-card ul li{ font-size:14px; color:var(--ink-soft); padding-left:16px; position:relative; }
+  .edu-card ul li::before{ content:"—"; position:absolute; left:0; color:var(--gold); }
+
+  /* ============ THESIS ============ */
+  .thesis-box{
+    background:linear-gradient(135deg, var(--bg-dark) 0%, var(--teal) 55%, var(--bg-dark2) 100%); color:var(--text-light);
+    border-radius:14px; padding:44px 40px; position:relative; overflow:hidden;
+  }
+  .thesis-box::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(ellipse 60% 60% at 90% 0%, rgba(255,255,255,.18), transparent 60%);
+  }
+  .thesis-box > *{ position:relative; z-index:1; }
+  .thesis-badge{
+    display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.04em; color:var(--teal);
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.4); padding:6px 14px; border-radius:20px; margin-bottom:20px; color:#fff;
+  }
+  .thesis-title{ font-family:var(--serif); font-style:italic; font-weight:500; font-size:1.5rem; line-height:1.35; color:#fff; max-width:80%; }
+  .thesis-sup{ margin-top:14px; font-size:13.5px; color:var(--text-dim); }
+  .thesis-desc{ margin-top:20px; font-size:14.5px; color:var(--text-dim); max-width:72ch; }
+  .thesis-methods-list{ list-style:none; margin-top:16px; display:flex; flex-direction:column; gap:7px; max-width:72ch; }
+  .thesis-methods-list li{ position:relative; padding-left:18px; font-size:14px; color:var(--text-dim); }
+  .thesis-methods-list li::before{ content:""; position:absolute; left:0; top:8px; width:6px; height:1.5px; background:var(--accent-on-dark); }
+  .thesis-links{ margin-top:26px; display:flex; gap:14px; flex-wrap:wrap; }
+  .thesis-links .btn-primary, .contact-cta .btn-primary{
+    background:#fff; color:var(--teal-deep); box-shadow:0 8px 22px -8px rgba(0,0,0,.35);
+  }
+  .thesis-links .btn-primary:hover, .contact-cta .btn-primary:hover{ background:#F6ECF4; }
+  .thesis-links .btn-ghost{
+    background:transparent; color:#fff; border:1px solid rgba(255,255,255,.35); box-shadow:none;
+  }
+  .thesis-links .btn-ghost:hover{ background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.6); }
+  .thesis-stats{ margin-top:36px; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; border-top:1px solid rgba(255,255,255,.12); padding-top:26px; }
+  .ts-label{ font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); }
+  .ts-value{ font-size:13.5px; color:#fff; margin-top:6px; font-weight:500; }
+  .ts-value a{ color:var(--accent-on-dark); text-decoration:underline; text-underline-offset:2px; }
+  @media (max-width:760px){ .thesis-title{ max-width:100%; } .thesis-stats{ grid-template-columns:1fr 1fr; } }
+
+  /* ============ SKILLS ============ */
+  .skill-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+  .skill-card{
+    background:var(--card); border:1px solid var(--line); border-radius:8px; padding:24px 26px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .skill-card:hover{ transform:translateY(-3px); box-shadow:0 14px 30px -18px rgba(110,46,99,.24); }
+  .skill-card.primary{ border-color:var(--teal); background:linear-gradient(180deg, var(--teal-glow) 0%, var(--card) 18%); grid-column:1/-1; }
+  .skill-cat-title{ font-weight:700; font-size:1rem; margin-bottom:14px; display:flex; align-items:center; gap:9px; }
+  .skill-tags{ display:flex; flex-wrap:wrap; gap:7px; }
+  .skill-tags .tag{ background:var(--paper); }
+  @media (max-width:760px){ .skill-grid{ grid-template-columns:1fr; } }
+  .workstyle-row{ margin-top:26px; display:flex; flex-wrap:wrap; gap:9px; }
+  .workstyle-row .tag{ background:var(--gold-tint); color:var(--gold); border-color:rgba(184,132,42,.3); }
+
+  /* ============ AWARDS ============ */
+  .award-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .award-item{
+    display:flex; gap:14px; align-items:flex-start; background:var(--card); border:1px solid var(--line);
+    border-radius:8px; padding:18px 20px; transition:transform .2s ease, border-color .2s ease;
+  }
+  .award-item:hover{ transform:translateY(-2px); border-color:var(--gold); }
+  .award-icon{ font-size:1.3rem; flex-shrink:0; }
+  .award-text{ font-size:14px; color:var(--ink-soft); }
+  @media (max-width:760px){ .award-grid{ grid-template-columns:1fr; } }
+
+  /* ============ PROJECTS ============ */
+  .proj-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .proj-card{ background:var(--card); border:1px solid var(--line); border-radius:8px; padding:20px 22px; transition:transform .25s ease, box-shadow .25s ease; }
+  .proj-card:hover{ transform:translateY(-3px); box-shadow:0 14px 30px -18px rgba(110,46,99,.24); }
+  .proj-card h4{ font-family:var(--serif); font-size:1.02rem; font-weight:600; margin-bottom:8px; }
+  .proj-card p{ font-size:13px; color:var(--ink-soft); }
+  @media (max-width:900px){ .proj-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .proj-grid{ grid-template-columns:1fr; } }
+
+  /* ============ COMMUNITY ============ */
+  .comm-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  .comm-card{ background:var(--card); border:1px solid var(--line); border-radius:8px; padding:24px 26px; }
+  .comm-card h4{ font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--teal-deep); margin-bottom:14px; }
+  .comm-card p{ font-size:14px; color:var(--ink-soft); line-height:1.8; }
+  @media (max-width:760px){ .comm-grid{ grid-template-columns:1fr; } }
+
+  /* ============ REFERENCES ============ */
+  .ref-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .ref-card{ background:var(--card); border:1px solid var(--line); border-radius:8px; padding:22px 24px; }
+  .ref-role{ font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); margin-bottom:8px; }
+  .ref-name{ font-weight:700; font-size:15px; }
+  .ref-org{ font-size:13px; color:var(--ink-soft); margin-top:4px; }
+  .ref-note{ margin-top:18px; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  @media (max-width:760px){ .ref-grid{ grid-template-columns:1fr; } }
+
+  /* ============ CONTACT ============ */
+  .contact-section{ background:linear-gradient(135deg, var(--bg-dark) 0%, var(--teal) 55%, var(--bg-dark2) 100%); color:var(--text-light); border-bottom:none; }
+  .contact-section .sec-eyebrow{ color:var(--accent-on-dark); }
+  .contact-section .sec-eyebrow::before{ background:var(--accent-on-dark); }
+  .contact-section .sec-title{ color:#fff; }
+  .contact-section .sec-title em{ color:var(--accent-on-dark); }
+  .contact-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .contact-item{ background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:22px 18px; transition:transform .2s ease, border-color .2s ease; }
+  .contact-item:hover{ transform:translateY(-3px); border-color:rgba(255,255,255,.5); }
+  .ci-icon{ font-size:1.4rem; margin-bottom:10px; }
+  .ci-label{ font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); }
+  .ci-value{ font-size:14px; font-weight:600; margin-top:6px; color:#fff; }
+  .ci-value a{ color:var(--accent-on-dark); }
+  .contact-cta{ margin-top:40px; text-align:center; }
+  @media (max-width:820px){ .contact-grid{ grid-template-columns:1fr 1fr; } }
+
+  footer{ background:var(--bg-dark); color:var(--text-dim); text-align:center; padding:30px 0; font-family:var(--mono); font-size:11.5px; letter-spacing:.03em; }
+
+  :focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Arooj <span>Fatima</span></div>
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#exp" data-i18n="nav.exp">Experience</a></li>
+      <li><a href="#edu" data-i18n="nav.edu">Education</a></li>
+      <li><a href="#thesis" data-i18n="nav.thesis">Thesis</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#awards" data-i18n="nav.awards">Awards</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button type="button" id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button type="button" id="btn-de" onclick="setLang('de')">DE</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow" data-i18n="hero.eyebrow">Functional Biomaterials · Cell Culture · Biohybrid Systems</div>
+      <h1>Arooj <em>Fatima</em></h1>
+      <div class="subtitle" data-i18n="hero.subtitle">M.Sc. Biotechnology — Hochschule Offenburg, Germany</div>
+      <div class="loc-line" data-i18n-html="hero.loc">📍 <b>Offenburg, Germany</b> (open to relocate) · Available 16–20 h/week, on site in Stuttgart</div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:aroojfatimacust21@gmail.com" data-i18n="hero.cta1">✉ Get In Touch</a>
+        <a class="btn btn-ghost" href="#exp" data-i18n="hero.cta2">View Experience</a>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <div class="portrait">
+        <img src="data:image/jpeg;base64,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" alt="Portrait of Arooj Fatima">
+      </div>
+      <div class="badge-pill" data-i18n="hero.badge">Open to Student Research Assistant Roles in Functional Biomaterials</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-icon">🏅</div>
+        <div class="stat-num" data-i18n="stat.1.num">Gold Medalist · 1st Rank</div>
+        <div class="stat-label" data-i18n="stat.1.label">B.S. Microbiology</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🧫</div>
+        <div class="stat-num" data-i18n="stat.2.num">2 Years</div>
+        <div class="stat-label" data-i18n="stat.2.label">Hands-On Mammalian Cell Culture</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🔬</div>
+        <div class="stat-num" data-i18n="stat.3.num">3 Cell Lines</div>
+        <div class="stat-label" data-i18n="stat.3.label">NIH/3T3, HEK293 and C2C12 Maintained</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📏</div>
+        <div class="stat-num" data-i18n="stat.4.num">ISO 10993-5</div>
+        <div class="stat-label" data-i18n="stat.4.label">Principles for In Vitro Biocompatibility Assays</div>
+      </div>
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,32 C240,60 480,0 720,18 C960,36 1200,58 1440,24 L1440,60 L0,60 Z" fill="var(--paper)"></path>
+  </svg>
+</header>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="about.eyebrow">Overview</div>
+      <h2 class="sec-title" data-i18n-html="about.title">About <em>Me</em></h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-label" data-i18n="about.card.label">Quick Facts</div>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <div class="il-label" data-i18n="about.loc.label">Location</div>
+                <div class="il-value">Offenburg, Germany 🇩🇪</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div>
+                <div class="il-label" data-i18n="about.email.label">Email</div>
+                <div class="il-value"><a href="mailto:aroojfatimacust21@gmail.com">aroojfatimacust21@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div>
+                <div class="il-label" data-i18n="about.phone.label">Phone (Germany)</div>
+                <div class="il-value"><a href="tel:+4915164371174">+49 151 64371174</a></div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🎓</div>
+              <div>
+                <div class="il-label" data-i18n="about.erasmus.label">Erasmus</div>
+                <div class="il-value" data-i18n="about.erasmus.value">Semester 1 Exchange at University of Warmia &amp; Mazury, Poland — returning to Hochschule Offenburg</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-text">
+            <p data-i18n="about.text">Master's student in Biotechnology with two years of hands-on mammalian cell culture experience and a strong interest in functional biomaterials and biohybrid systems. Experienced in routine cell passaging, in vitro biocompatibility assays, media and buffer preparation, and laboratory documentation. Reliable, well organized, and comfortable in international, interdisciplinary research teams. Seeking a student research assistant role in functional biomaterials and biolab research.</p>
+          </div>
+          <div class="about-highlights">
+            <span class="tag" data-i18n="about.tag.gold">🥇 Gold Medalist, B.Sc. Microbiology</span>
+            <span class="tag" data-i18n="about.tag.bsl2">🧫 Cell Culture &amp; Biomaterials</span>
+            <span class="tag" data-i18n="about.tag.thesis">📄 Thesis Published — ResearchGate</span>
+            <span class="tag" data-i18n="about.tag.en">🇬🇧 English C1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="exp">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="exp.eyebrow">Career</div>
+      <h2 class="sec-title" data-i18n-html="exp.title">Professional <em>Experience</em></h2>
+
+      <div class="timeline">
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-role" data-i18n="exp.job1.role">Student Assistant</div>
+              <div class="job-org" data-i18n="exp.job1.org">Shaheen Lab and Diagnostic Center, Pakistan</div>
+            </div>
+            <div class="job-date">02/2023 – 11/2025</div>
+          </div>
+          <ul data-i18n-html="exp.job1.bullets">
+            <li>Maintained adherent mammalian cell lines (NIH/3T3, HEK293, C2C12): routine passaging, cryopreservation, mycoplasma testing and contamination control under sterile conditions.</li>
+            <li>Performed in vitro biocompatibility assays (live/dead staining, MTT/resazurin viability, LDH cytotoxicity) on polymer and hydrogel samples following ISO 10993-5 principles.</li>
+            <li>Supported physicochemical characterization: rheology, tensile testing, DSC, swelling and degradation studies.</li>
+            <li>Prepared and sterilized culture media, buffers and reagents; managed consumables inventory and reorder lists for a 10-person lab, reducing stock-outs.</li>
+            <li>Documented procedures and cell records in an electronic lab notebook; analyzed data in Excel, Python and GraphPad Prism.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Cell Culture</span><span class="tag">Biocompatibility Assays</span><span class="tag">Rheology &amp; DSC</span><span class="tag">ELN</span><span class="tag">GraphPad Prism</span>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-role" data-i18n="exp.job2.role">Laboratory Intern</div>
+              <div class="job-org" data-i18n="exp.job2.org">Fauji Foundation Hospital, Pakistan</div>
+            </div>
+            <div class="job-date">07/2022 – 10/2022</div>
+          </div>
+          <ul data-i18n-html="exp.job2.bullets">
+            <li>Assisted in cell-based assays and media preparation under SOP and GLP conditions.</li>
+            <li>Trained in lab safety, waste handling and equipment maintenance (biosafety cabinets, incubators, centrifuges and autoclave).</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">SOPs &amp; GLP</span><span class="tag">Lab Safety</span><span class="tag">Equipment Maintenance</span>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-role" data-i18n="exp.job3.role">Science and Biology Instructor &amp; Supervisor</div>
+              <div class="job-org" data-i18n="exp.job3.org">The Education Hub, Pakistan</div>
+            </div>
+            <div class="job-date">01/2020 – 06/2022</div>
+          </div>
+          <ul data-i18n-html="exp.job3.bullets">
+            <li>Taught science and biology and supervised teaching staff and students.</li>
+            <li>Organized academic activities and handled communication with students and parents.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Teaching</span><span class="tag">Supervision</span><span class="tag">Communication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="edu">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="edu.eyebrow">Academic Background</div>
+      <h2 class="sec-title" data-i18n="edu.title">Education</h2>
+
+      <div class="edu-card">
+        <div class="job-head">
+          <div>
+            <div class="job-role" data-i18n="edu.msc.name">M.Sc. Biotechnology (Double Degree)</div>
+            <div class="job-org">Hochschule Offenburg, Germany &amp; UWM, Poland 🇩🇪🇵🇱</div>
+          </div>
+          <div class="job-date" data-i18n="edu.msc.date">10/2025 – Present</div>
+        </div>
+        <ul data-i18n-html="edu.msc.list">
+          <li><strong>Relevant coursework:</strong> Biomaterials Science, Cell Culture Techniques, Biophysical Characterization Methods, Industrial Microbiology.</li>
+        </ul>
+        <div class="tag-row" style="margin-top:14px;">
+          <span class="tag">Biomaterials Science</span><span class="tag">Cell Culture Techniques</span><span class="tag">Biophysical Characterization</span>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="job-head">
+          <div>
+            <div class="job-role" data-i18n="edu.bsc.name">B.Sc. Microbiology — Gold Medalist</div>
+            <div class="job-org">Capital University of Science &amp; Technology (CUST), Pakistan 🇵🇰</div>
+          </div>
+          <div class="job-date">09/2019 – 02/2023</div>
+        </div>
+        <ul data-i18n-html="edu.bsc.list">
+          <li><strong>Gold Medalist · Ranked 1st · Full Merit Scholarship</strong></li>
+          <li><strong>Bachelor Thesis:</strong> Antibiotic Resistance in Hospital Environments.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENTIFIC LITERATURE & WRITING -->
+  <!-- THESIS -->
+  <section id="thesis">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="thesis.eyebrow">Published Research</div>
+      <h2 class="sec-title" data-i18n-html="thesis.title">Bachelor's <em>Thesis</em></h2>
+
+      <div class="thesis-box">
+        <span class="thesis-badge" data-i18n="thesis.badge">📄 B.Sc. Thesis · ResearchGate Published</span>
+        <div class="thesis-title">The Invisible Threat: Mapping Antibiotic-Resistant Superbugs Across High-Risk Hospital Zones</div>
+        <div class="thesis-sup" data-i18n-html="thesis.sup"><strong>Supervisor:</strong> Prof. Dr. Shaukat Iqbal · Capital University of Science &amp; Technology (CUST), Pakistan · 2023</div>
+        <p class="thesis-desc" data-i18n="thesis.desc">Isolated and cultured S2-classified pathogens (S. aureus, P. aeruginosa, Acinetobacter spp., E. coli) from hospital air/surface samples. Identified isolates via Gram stain, catalase, oxidase, coagulase, DNase, and API-based biochemical testing. Determined methicillin resistance (MRSA) and resistant CoNS via cefoxitin disk diffusion, and quantified contamination by CFU counts.</p>
+        <div class="thesis-links">
+          <a class="btn btn-primary" href="https://www.researchgate.net/publication/404390486_The_Invisible_Threat_Mapping_Antibiotic-Resistant_Superbugs_Across_High-Risk_Hospital_Zones" target="_blank" rel="noopener" data-i18n="thesis.link1">🔬 View on ResearchGate</a>
+          <a class="btn btn-ghost" href="https://doi.org/10.13140/RG.2.2.14434.49601" target="_blank" rel="noopener">🔗 DOI: 10.13140/RG.2.2.14434.49601</a>
+        </div>
+        <div class="thesis-stats">
+          <div>
+            <div class="ts-label" data-i18n="thesis.stat1.label">Publication</div>
+            <div class="ts-value">ResearchGate, 2023</div>
+          </div>
+          <div>
+            <div class="ts-label">DOI</div>
+            <div class="ts-value"><a href="https://doi.org/10.13140/RG.2.2.14434.49601" target="_blank" rel="noopener">10.13140/RG.2.2.14434.49601</a></div>
+          </div>
+          <div>
+            <div class="ts-label" data-i18n="thesis.stat3.label">Methods</div>
+            <div class="ts-value">Gram Stain · Biochemical ID · Disk Diffusion · CFU Counts</div>
+          </div>
+          <div>
+            <div class="ts-label" data-i18n="thesis.stat4.label">Focus</div>
+            <div class="ts-value" data-i18n="thesis.stat4.value">Antimicrobial Resistance · Hospital Pathogens</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="skills.eyebrow">Expertise</div>
+      <h2 class="sec-title" data-i18n-html="skills.title">Skills &amp; <em>Competencies</em></h2>
+
+      <div class="skill-grid">
+        <div class="skill-card primary">
+          <div class="skill-cat-title">🧫 <span data-i18n="skills.cat.cc">Cell Culture</span></div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.tag.cc0">Adherent and suspension cultures</span>
+            <span class="tag" data-i18n="skills.tag.cc1">Passaging</span>
+            <span class="tag" data-i18n="skills.tag.cc2">Cryopreservation</span>
+            <span class="tag" data-i18n="skills.tag.cc3">2D and 3D culture</span>
+            <span class="tag" data-i18n="skills.tag.cc4">Aseptic technique</span>
+            <span class="tag" data-i18n="skills.tag.cc5">Mycoplasma testing</span>
+          </div>
+        </div>
+
+        <div class="skill-card primary">
+          <div class="skill-cat-title">🧪 <span data-i18n="skills.cat.bc">Biomaterials Characterization</span></div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.tag.bc0">Rheology</span>
+            <span class="tag" data-i18n="skills.tag.bc1">Tensile and compression testing</span>
+            <span class="tag" data-i18n="skills.tag.bc2">DSC</span>
+            <span class="tag" data-i18n="skills.tag.bc3">FTIR</span>
+            <span class="tag" data-i18n="skills.tag.bc4">Swelling and stability studies</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-cat-title">🔬 <span data-i18n="skills.cat.as">Assays</span></div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.tag.as0">Cell viability and cytotoxicity</span>
+            <span class="tag" data-i18n="skills.tag.as1">Fluorescence microscopy</span>
+            <span class="tag" data-i18n="skills.tag.as2">ELISA</span>
+            <span class="tag" data-i18n="skills.tag.as3">Immunostaining</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-cat-title">🧬 <span data-i18n="skills.cat.mb">Molecular Biology</span></div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.tag.mb0">DNA/RNA extraction</span>
+            <span class="tag" data-i18n="skills.tag.mb1">PCR</span>
+            <span class="tag" data-i18n="skills.tag.mb2">Electrophoresis</span>
+            <span class="tag" data-i18n="skills.tag.mb3">Protein quantification</span>
+            <span class="tag" data-i18n="skills.tag.mb4">Western blot</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-cat-title">📋 <span data-i18n="skills.cat.lo">Lab Operations</span></div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.tag.lo0">Media and buffer preparation</span>
+            <span class="tag" data-i18n="skills.tag.lo1">Inventory management</span>
+            <span class="tag" data-i18n="skills.tag.lo2">SOPs</span>
+            <span class="tag" data-i18n="skills.tag.lo3">GLP</span>
+            <span class="tag" data-i18n="skills.tag.lo4">Electronic lab notebooks</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-cat-title">💻 <span data-i18n="skills.cat.sw">Software</span></div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.tag.sw0">Python</span>
+            <span class="tag" data-i18n="skills.tag.sw1">ImageJ/Fiji</span>
+            <span class="tag" data-i18n="skills.tag.sw2">GraphPad Prism</span>
+            <span class="tag" data-i18n="skills.tag.sw3">Origin</span>
+            <span class="tag" data-i18n="skills.tag.sw4">MS Office</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-cat-title">🔭 <span data-i18n="skills.cat.ri">Research Interests</span></div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.tag.ri0">Functional biomaterials</span>
+            <span class="tag" data-i18n="skills.tag.ri1">Cell-material interactions</span>
+            <span class="tag" data-i18n="skills.tag.ri2">Biohybrid robotics</span>
+            <span class="tag" data-i18n="skills.tag.ri3">Experimental biology</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-cat-title">🗣️ <span data-i18n="skills.cat.lang">Languages</span></div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="skills.tag.en">English — Excellent (C1)</span>
+            <span class="tag" data-i18n="skills.tag.de">German — Good (B1)</span>
+            <span class="tag" data-i18n="skills.tag.ur">Urdu — Native</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="workstyle-row">
+        <span class="tag" data-i18n="skills.ws.1">Independent Working</span>
+        <span class="tag" data-i18n="skills.ws.2">Structured Organization</span>
+        <span class="tag" data-i18n="skills.ws.3">Quality Orientation</span>
+        <span class="tag" data-i18n="skills.ws.4">Reliability</span>
+        <span class="tag" data-i18n="skills.ws.5">Communication</span>
+        <span class="tag" data-i18n="skills.ws.6">Time Management</span>
+        <span class="tag" data-i18n="skills.ws.7">Multitasking</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="awards.eyebrow">Recognition</div>
+      <h2 class="sec-title" data-i18n-html="awards.title">Awards &amp; <em>Honors</em></h2>
+      <div class="award-grid">
+        <div class="award-item"><div class="award-icon">🥇</div><div class="award-text" data-i18n="awards.1">Gold Medal — Academic Excellence, B.S. Microbiology, CUST (Ranked 1st, Dec 2022)</div></div>
+        <div class="award-item"><div class="award-icon">🏆</div><div class="award-text" data-i18n="awards.2">Topped both University and College departments throughout academic journey</div></div>
+        <div class="award-item"><div class="award-icon">📜</div><div class="award-text" data-i18n="awards.3">Full Merit Scholarship — PKR 60,000 per semester, CUST (2019–2023)</div></div>
+        <div class="award-item"><div class="award-icon">🎓</div><div class="award-text" data-i18n="awards.4">5 Dean's Honors during Bachelor's degree</div></div>
+        <div class="award-item"><div class="award-icon">🏅</div><div class="award-text" data-i18n="awards.5">Government-Funded Scholarship — HSSC (2016–2018)</div></div>
+        <div class="award-item"><div class="award-icon">📚</div><div class="award-text" data-i18n="awards.6">Merit Scholarship — SSC (2014–2016)</div></div>
+        <div class="award-item"><div class="award-icon">⭐</div><div class="award-text" data-i18n="awards.7">Consistent Position Holder from Class 1 through Class 8</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="proj.eyebrow">Research</div>
+      <h2 class="sec-title" data-i18n-html="proj.title">Projects &amp; <em>Presentations</em></h2>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <h4 data-i18n="proj.1.title">Whole Genome Sequencing of Bacterial Genomes</h4>
+          <p data-i18n="proj.1.text">Sequencing and analysis of bacterial genomes to study genetic variations and resistance mechanisms.</p>
+        </div>
+        <div class="proj-card">
+          <h4 data-i18n="proj.2.title">E Protein of COVID-19 — Bioinformatics Analysis</h4>
+          <p data-i18n="proj.2.text">Functional analysis of SARS-CoV-2 E protein via computational and sequencing tools. Coursera-certified, 95%+.</p>
+        </div>
+        <div class="proj-card">
+          <h4 data-i18n="proj.3.title">Early Blight in Potatoes — Punjab</h4>
+          <p data-i18n="proj.3.text">Impact analysis of Alternaria solani on crop yield with identification of effective treatment strategies.</p>
+        </div>
+        <div class="proj-card">
+          <h4 data-i18n="proj.4.title">Shelf Life Enhancement of Guava by Heating</h4>
+          <p data-i18n="proj.4.text">Optimized heating techniques to reduce microbial spoilage and extend post-harvest shelf life.</p>
+        </div>
+        <div class="proj-card">
+          <h4 data-i18n="proj.5.title">Genetic Analysis of Antibiotic Resistance in Microbes</h4>
+          <p data-i18n="proj.5.text">Presented microbial resistance mechanisms and evidence-based strategies to combat antibiotic resistance.</p>
+        </div>
+        <div class="proj-card">
+          <h4 data-i18n="proj.6.title">Effects of Schizophrenia in Health</h4>
+          <p data-i18n="proj.6.text">Detailed research report covering aetiology, symptoms, and current pharmacological approaches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="comm.eyebrow">Beyond the Lab</div>
+      <h2 class="sec-title" data-i18n-html="comm.title">Community &amp; <em>Activities</em></h2>
+      <div class="comm-grid">
+        <div class="comm-card">
+          <h4 data-i18n="comm.vol.title">Volunteer &amp; Community</h4>
+          <p data-i18n="comm.vol.text">Treasurer, student association (60 members), 2023–2025: budget tracking, event organization and meeting minutes. Volunteered at Alkhidmat Foundation — free medical aid and food for underprivileged communities. Taught students for two years without payment to support their education. Conference Mediator &amp; Tutor Guide at a community development NGO. Member of the university sciences student association; organized a seminar series on regulatory careers. Member, university Quality &amp; Compliance student working group (2024–present).</p>
+        </div>
+        <div class="comm-card">
+          <h4 data-i18n="comm.ev.title">Events &amp; Sports</h4>
+          <p data-i18n="comm.ev.text">Event Organiser — Life Sciences Society &amp; University Sports Week. Event Assistant, Genix Society (Life Science Department). Cricket Captain — led teams to two tournament victories. Sports certificates: Cricket, Football, Table Tennis, Badminton. Hobbies: board games and chess (structured thinking), hiking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section id="references">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="ref.eyebrow">References</div>
+      <h2 class="sec-title" data-i18n-html="ref.title">Academic <em>References</em></h2>
+      <div class="ref-grid">
+        <div class="ref-card">
+          <div class="ref-role" data-i18n="ref.1.role">Thesis Supervisor</div>
+          <div class="ref-name">Prof. Dr. Shaukat Iqbal</div>
+          <div class="ref-org">Capital University of Science &amp; Technology (CUST), Pakistan</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-role" data-i18n="ref.2.role">Academic Reference</div>
+          <div class="ref-name">Asst. Prof. Dr. Sami Ullah Jan</div>
+          <div class="ref-org">Capital University of Science &amp; Technology (CUST), Pakistan</div>
+        </div>
+      </div>
+      <div class="ref-note" data-i18n="ref.note">Full contact details available on request.</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="sec-eyebrow" data-i18n="contact.eyebrow">Connect</div>
+      <h2 class="sec-title" data-i18n-html="contact.title">Get In <em>Touch</em></h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="ci-icon">✉️</div>
+          <div class="ci-label" data-i18n="contact.email.label">Email</div>
+          <div class="ci-value"><a href="mailto:aroojfatimacust21@gmail.com">aroojfatimacust21@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div class="ci-label" data-i18n="contact.phone.label">Germany</div>
+          <div class="ci-value"><a href="tel:+4915164371174">+49 151 64371174</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div class="ci-label" data-i18n="contact.loc.label">Location</div>
+          <div class="ci-value">Offenburg, Germany</div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🎓</div>
+          <div class="ci-label" data-i18n="contact.uni.label">University</div>
+          <div class="ci-value">Hochschule Offenburg</div>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <a class="btn btn-primary" href="mailto:aroojfatimacust21@gmail.com" data-i18n="contact.cta">✉ Send an Email</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer data-i18n="footer.text">© 2026 Arooj Fatima · Functional Biomaterials · M.Sc. Biotechnology · Hochschule Offenburg</footer>
+
+<script>
+const translations = {
+  de: {
+    "nav.about":"Über mich", "nav.exp":"Erfahrung", "nav.edu":"Bildung", "nav.research":"Projekte", "nav.thesis":"Abschlussarbeit",
+    "nav.skills":"Fähigkeiten", "nav.awards":"Auszeichnungen", "nav.contact":"Kontakt",
+    "hero.eyebrow":"Umwelttechnik · EHS & Umweltmanagement · Wasser- & Abfallwirtschaft",
+    "hero.subtitle":"M.Sc. Biotechnologie — Hochschule Offenburg, Deutschland",
+    "hero.loc":"📍 <b>Kehl, Deutschland</b> (umzugsbereit) · Verfügbar für EHS- & Umweltstellen",
+    "hero.cta1":"✉ Kontakt aufnehmen",
+    "hero.cta2":"Erfahrung ansehen",
+    "hero.badge":"Offen für Stellen in EHS, Umwelttechnik & Wasser-/Abfallwirtschaft",
+    "stat.1.num":"Goldmedaille",
+    "stat.1.label":"B.Sc. Mikrobiologie",
+    "stat.2.num":"500+ Datensätze",
+    "stat.2.label":"Umweltdatenbank, Fehler um 30 % gesenkt",
+    "stat.3.label":"Gefahrstoffe & SDB-Unterlagen",
+    "stat.4.num":"−12 % Abfall",
+    "stat.4.label":"Maßnahme zur Reduktion von Restabfall",
+    "about.eyebrow":"Übersicht",
+    "about.title":"Über <em>Mich</em>",
+    "about.card.label":"Kurzübersicht",
+    "about.tag.gold":"🥇 Goldmedaille, B.Sc. Mikrobiologie",
+    "about.tag.bsl2":"🌍 Umwelttechnik & EHS",
+    "about.tag.thesis":"📄 Abschlussarbeit veröffentlicht — ResearchGate",
+    "about.tag.en":"🇬🇧 Englisch C1",
+    "about.loc.label":"Standort",
+    "about.email.label":"E-Mail",
+    "about.phone.label":"Telefon (Deutschland)",
+    "about.erasmus.label":"Erasmus",
+    "about.erasmus.value":"Erasmus-Austausch (Semester 1) an der Universität Ermland-Masuren, Polen — Rückkehr nach Offenburg",
+    "about.text":"M.Sc.-Studentin der Biotechnologie (Doppelabschluss, Hochschule Offenburg / UWM Polen) mit akademischer Spezialisierung in Umwelttechnik, einschließlich Wasser- und Abwasserbehandlung, Umweltmonitoring, Umweltrisikobewertung und Nachhaltigkeit. Erfahren in Umweltdatenmanagement, Abfall- und Wasserstatistiken, Gefahrstoffdokumentation und Excel-Reporting.",
+    "exp.eyebrow":"Werdegang",
+    "exp.title":"Berufliche <em>Erfahrung</em>",
+    "exp.job1.role":"Junior-Umweltingenieurin",
+    "exp.job1.org":"RWMC, Rawalpindi",
+    "exp.job1.bullets":"<li>Erstellung monatlicher und jährlicher Statistiken zu Abfall, Wasser und Ressourcenverbrauch in Excel für 3 Standorte zur Unterstützung der Umweltberichterstattung.</li><li>Pflege einer Umweltdatenbank mit über 500 Datensätzen, Validierung der Einträge und Reduzierung von Datenfehlern um 30 %.</li><li>Pflege von Gefahrstoffverzeichnissen und Sicherheitsdatenblättern (SDB) für über 40 Materialien, Aktualisierung der Dokumentation nach Lieferantenänderungen.</li><li>Erfassung von Umweltindikatoren, darunter Wasserverbrauch pro Produktionseinheit, und Meldung von Abweichungen an das EHS-Team.</li><li>Direkte Erhebung von Betriebsdaten vor Ort mit dem Produktionspersonal und Unterstützung einer Abfallreduktionsmaßnahme, die den Restabfall um 12 % senkte.</li>",
+    "exp.teaching.title":"Lehrtätigkeit &amp; Mentoring",
+    "exp.teach1.role":"Biologiedozentin",
+    "exp.teach1.text":"Unterricht in fortgeschrittener Biologie und Chemie; Erstellung von Lehrplänen und interaktiven Materialien.",
+    "exp.teach2.role":"Lehrassistentin für Biologie &amp; Chemie",
+    "exp.teach2.org":"Teilzeit · 2020 – 2023",
+    "exp.teach2.text":"Konzeptionelle Vorlesungen und interaktive Materialien; zwei Jahre ehrenamtlicher Unterricht zur Unterstützung finanziell benachteiligter Studierender.",
+    "edu.eyebrow":"Akademischer Hintergrund",
+    "edu.title":"Ausbildung",
+    "edu.msc.name":"M.Sc. Biotechnologie (Doppelabschluss)",
+    "edu.msc.date":"10/2025 – 02/2028",
+    "edu.msc.list":"<li><strong>Semester 1 (UWM, Polen):</strong> Umwelttechnik.</li><li><strong>Schwerpunkt Umwelttechnik:</strong> Wasser- & Abwasserbehandlung, Umwelttechnologien, Umweltmonitoring & -bewertung, Umweltrisikobewertung, Industrielle Ökologie & Nachhaltigkeit.</li><li><strong>Aktueller Schwerpunkt:</strong> Nachhaltige Bioprozesstechnik & Biosicherheit.</li>",
+    "edu.bsc.name":"B.Sc. Mikrobiologie — Goldmedaillengewinnerin",
+    "edu.bsc.list":"<li><strong>Goldmedaillengewinnerin · Rang 1 · Vollstipendium</strong></li><li>Relevante Kursinhalte: Ökologie, Bodenkunde, Arbeits- & Umweltsicherheit.</li>",
+    "thesis.eyebrow":"Veröffentlichte Forschung",
+    "thesis.title":"Bachelor-<em>Abschlussarbeit</em>",
+    "thesis.badge":"📄 B.Sc. Abschlussarbeit · Auf ResearchGate veröffentlicht",
+    "thesis.methods.bullets":"<li>Sammlung und Verarbeitung von Umweltproben sowie Isolierung von Mikroorganismen mittels standardisierter mikrobiologischer Verfahren.</li><li>Durchführung mikrobieller Kultivierung, Identifikation und Charakterisierung unter Einhaltung aseptischer Verfahren.</li>",
+    "thesis.sup":"<strong>Betreuer:</strong> Prof. Dr. Shaukat Iqbal · Capital University of Science &amp; Technology (CUST), Pakistan · 2023",
+    "thesis.desc":"Isolierung und Kultivierung S2-klassifizierter Erreger (S. aureus, P. aeruginosa, Acinetobacter spp., E. coli) aus Luft-/Oberflächenproben von Krankenhäusern. Identifikation der Isolate mittels Gram-Färbung, Katalase-, Oxidase-, Koagulase-, DNase- und API-basierter biochemischer Tests. Bestimmung der Methicillinresistenz (MRSA) und resistenter CoNS mittels Cefoxitin-Scheibendiffusion sowie Quantifizierung der Kontamination anhand von KBE-Zahlen.",
+    "thesis.link1":"🔬 Auf ResearchGate ansehen",
+    "thesis.stat1.label":"Veröffentlichung",
+    "thesis.stat3.label":"Methoden",
+    "thesis.stat4.label":"Schwerpunkt",
+    "thesis.stat4.value":"Antibiotikaresistenz · Krankenhauskeime",
+    "skills.eyebrow":"Fachkenntnisse",
+    "skills.title":"Fähigkeiten &amp; <em>Kompetenzen</em>",
+    "skills.cat.qr":"Qualität &amp; Regulatorik",
+    "skills.tag.sop":"SOP-Management",
+    "skills.tag.doccontrol":"Dokumentenkontrolle",
+    "skills.tag.audit":"Audit-Unterstützung",
+    "skills.tag.inspection":"Inspektionsbereitschaft",
+    "skills.tag.capa":"CAPA-Nachverfolgung",
+    "skills.tag.deviation":"Abweichungsmanagement",
+    "skills.tag.change":"Change Control",
+    "skills.cat.qm":"Qualitätsmanagement",
+    "skills.tag.qdoc":"Qualitätsdokumentation",
+    "skills.tag.ctdoc":"Dokumentation klinischer Studien",
+    "skills.tag.risk":"Qualitätsrisikomanagement",
+    "skills.tag.compliance":"Compliance-Überwachung",
+    "skills.tag.kpi":"KPI-Reporting",
+    "skills.tag.metrics":"Qualitätskennzahlen",
+    "skills.cat.clin":"Klinische Diagnostik",
+    "skills.tag.culture":"Mikrobielle Kultur",
+    "skills.tag.gram":"Gram-Färbung",
+    "skills.tag.pathogen":"Erregeridentifikation",
+    "skills.tag.disk":"Scheibendiffusion",
+    "skills.tag.biochem":"Biochemische Identifikationstests",
+    "skills.cat.mol":"Sequenzierung &amp; Bioinformatik",
+    "skills.tag.seqanalysis":"Sequenzanalyse",
+    "skills.cat.moldiag":"Molekulardiagnostik &amp; Mikrobiologie",
+    "skills.cat.labops":"Laborbetrieb",
+    "skills.tag.aseptic":"Aseptische Technik",
+    "skills.tag.centrifuge":"Zentrifugation",
+    "skills.tag.reagent":"Reagenzienvorbereitung",
+    "skills.tag.sterile":"Sterile Laborpraktiken",
+    "skills.tag.qc":"Qualitätskontrolle",
+    "skills.tag.expdoc":"Versuchsdokumentation",
+    "skills.tag.sampletrack":"Probenverfolgung",
+    "skills.tag.labrecords":"Laborprotokolle",
+    "skills.tag.datamgmt":"Datenmanagement",
+    "skills.tag.inventory":"Verbrauchsmaterial- &amp; Bestandsverwaltung",
+    "skills.tag.amr":"Molekulare AMR-Genotypisierung",
+    "rp.eyebrow":"Relevante Projekte",
+    "rp.role":"Gefahrstoffe & Compliance",
+    "rp.org":"Universität Ermland-Masuren, Polen, 2026",
+    "rp.bullets":"<li>Klassifizierung von 25 Gefahrstoffen nach Lager- und Handhabungsanforderungen und Entwicklung einer Excel-basierten Verzeichnisvorlage mit Gefahrenklasse, Menge und Prüfdatum.</li>",
+    "rp2.role":"Analyse von Umweltindikatoren",
+    "rp2.org":"Universität Ermland-Masuren, Polen, 2026",
+    "rp2.bullets":"<li>Analyse von 3 Jahren Wasser-, Abfall- und Energiedaten in Excel, Berechnung von 8 Umweltindikatoren und Bewertung von Möglichkeiten zur Steigerung der Wasserressourceneffizienz.</li>",
+    "rp3.role":"Industrielle Abwasserbehandlung",
+    "rp3.org":"Universität Ermland-Masuren, Polen",
+    "rp3.bullets":"<li>Bewertung der Eliminationsleistung aller Parameter anhand von Prozessdaten sowie Beurteilung der Leistung der Abwasserbehandlung und von Optimierungspotenzialen.</li>",
+    "rp4.role":"Datenanalyse nachhaltiger Bioprozesse",
+    "rp4.org":"Offenburg, 2026",
+    "rp4.bullets":"<li>Analyse von Prozessdaten in R/Python zum Vergleich des Ressourcenverbrauchs über mehrere Chargen.</li>",
+    "rp.title":"Forschungs- &amp; <em>Projektunterstützung</em>",
+    "skills.cat.ppt":"Microsoft PowerPoint (Fortgeschritten)",
+    "skills.tag.slidedesign":"Gestaltung &amp; Bearbeitung von Vorlesungsfolien",
+    "skills.tag.scifigures":"Wissenschaftliche Abbildungen &amp; Diagramme",
+    "skills.tag.formatting":"Einheitliche Formatierung &amp; visuelle Hierarchie",
+    "skills.tag.presstructure":"Präsentationsstruktur &amp; Inhaltsoptimierung",
+    "skills.cat.restools":"Recherche-Tools",
+    "skills.labbg.note2":"Verankert wissenschaftliches Schreiben und Lehre in praktischer Laborerfahrung.",
+    "skills.cat.clindata":"Klinische Daten",
+    "skills.tag.curation":"Kuratierung klinischer Daten",
+    "skills.tag.annotation":"Datenannotation",
+    "skills.tag.validation":"Datenvalidierung",
+    "skills.tag.dataqc":"Datenqualitätskontrolle",
+    "skills.tag.cdp":"Verarbeitung klinischer Daten",
+    "skills.tag.cleaning":"Datenbereinigung",
+    "skills.tag.standardization":"Datenstandardisierung",
+    "skills.tag.clinworkflows":"Klinische Arbeitsabläufe",
+    "skills.cat.digitalhealth":"Digital Health",
+    "skills.tag.hcanalytics":"Healthcare Analytics",
+    "skills.tag.medai":"Medizinische KI",
+    "skills.tag.cis":"Klinische Informationssysteme",
+    "skills.tag.dh":"Digital Health",
+    "skills.tag.biomeddata":"Biomedizinische Daten",
+    "skills.cat.datadoc":"Datendokumentation",
+    "skills.tag.metadata":"Metadaten",
+    "skills.tag.datadict":"Datenwörterbücher",
+    "skills.tag.techdoc":"Technische Dokumentation",
+    "skills.tag.qcreports":"Qualitätskontrollberichte",
+    "skills.tag.traceability":"Datenrückverfolgbarkeit",
+    "skills.cat.labbg":"Laborhintergrund",
+    "skills.labbg.note":"Unterstützt das fachliche Verständnis klinischer Datenquellen.",
+    "skills.tag.multiplex":"Multiplex-PCR",
+    "skills.tag.gel":"Gelelektrophorese",
+    "skills.tag.ngs":"NGS-Analyse",
+    "skills.cat.bio":"Biochemie &amp; Instrumentierung",
+    "skills.tag.gc":"GC (Grundkenntnisse)",
+    "skills.tag.ms":"Massenspektrometrie",
+    "skills.cat.software":"Software",
+    "skills.tag.powerbi":"Power BI (Grundkenntnisse)",
+    "skills.cat.lang":"Sprachen",
+    "skills.tag.en":"Englisch — Ausgezeichnet (C1)",
+    "skills.tag.de":"Deutsch — Sehr gut (B2)",
+    "skills.tag.ur":"Urdu — Muttersprache",
+    "skills.cat.teaching":"Unterricht",
+    "skills.tag.gensci":"Allgemeine Naturwissenschaft",
+    "skills.tag.stem":"MINT-Konzepte",
+    "skills.tag.exam":"Prüfungsvorbereitung",
+    "skills.tag.onlinetutor":"Online-Nachhilfe",
+    "skills.tag.lessonplan":"Unterrichtsplanung",
+    "skills.cat.practical":"Praktische Naturwissenschaft",
+    "skills.tag.amrtest":"Antibiotikaresistenztestung",
+    "skills.tag.datainterp":"Wissenschaftliche Dateninterpretation",
+    "skills.cat.digital":"Digital",
+    "skills.tag.msoffice":"Microsoft Office",
+    "skills.tag.onlineplatforms":"Online-Lehrplattformen",
+    "skills.tag.spectro":"Spektroskopische Verfahren",
+    "skills.tag.glp":"GLP-Dokumentation",
+    "skills.labbg.note3":"Bildet die praktische Grundlage für klaren, beispielorientierten naturwissenschaftlichen Unterricht.",
+    "skills.ws.1":"Selbstständiges Arbeiten",
+    "skills.ws.2":"Strukturierte Organisation",
+    "skills.ws.3":"Qualitätsorientierung",
+    "skills.ws.4":"Zuverlässigkeit",
+    "skills.ws.5":"Kommunikation",
+    "skills.ws.6":"Zeitmanagement",
+    "skills.ws.7":"Multitasking",
+    "skills.cat.researchsupport":"EHS",
+    "skills.tag.litresearch2":"Gefahrstoffe & SDB",
+    "skills.tag.scientificwriting2":"Umweltmonitoring",
+    "skills.tag.datacollection":"Abfall- & Wassermanagement",
+    "skills.tag.projectdoc":"Phänotypische Bewertung",
+    "skills.tag.reportprep":"Mikroinjektion",
+    "skills.tag.presdev":"Tierschutzprinzipien",
+    "skills.cat.digitaltools":"Daten & IT",
+    "skills.tag.aimodels":"Genexpressionsanalyse",
+    "skills.tag.digitaldoc":"Molekulares Klonieren",
+    "skills.cat.labpractice":"Computergestützte Fähigkeiten &amp; Tools",
+    "skills.cat.research":"Forschung",
+    "skills.tag.systreview":"Systematische Literaturübersichten",
+    "skills.tag.evidencescreen":"Evidenz-Screening",
+    "skills.tag.researchsynth":"Forschungssynthese",
+    "skills.tag.bibliometric":"Bibliometrische Analyse",
+    "skills.tag.quantqual":"Quantitative &amp; Qualitative Forschung",
+    "skills.tag.academicwriting":"Akademisches Schreiben",
+    "skills.cat.data":"Daten",
+    "skills.tag.datacleaning":"Datenbereinigung",
+    "skills.tag.statistics":"Statistik",
+    "skills.tag.dataviz":"Datenvisualisierung",
+    "skills.cat.aidigital":"Labor",
+    "skills.tag.promptengineering":"Wasserprobenahme",
+    "skills.tag.ailitreview":"pH & Leitfähigkeit",
+    "skills.tag.aiinfoextract":"Statistische Analyse",
+    "skills.cat.researchtools":"Forschungstools",
+    "skills.cat.sustesg":"Nachhaltigkeit &amp; ESG",
+    "skills.tag.carbonfootprint":"CO2-Fußabdruck des Unternehmens",
+    "skills.tag.scope13":"Scope-1–3-Emissionen",
+    "skills.tag.esgreporting":"ESG-Reporting",
+    "skills.tag.envkpi":"Umwelt-KPIs",
+    "skills.tag.resourceeff":"Ressourceneffizienz",
+    "skills.tag.lksg":"Lieferkettensorgfaltspflichtengesetz (LkSG)",
+    "skills.cat.envbiotech":"Umweltbiotechnologie",
+    "skills.tag.anaerobicdig":"Anaerobe Vergärung",
+    "skills.tag.wastetreat":"Abfallbehandlung",
+    "skills.tag.sustbioprocess":"Nachhaltige Bioprozesse",
+    "skills.tag.envassessment":"Umweltbewertung",
+    "skills.cat.envmgmt":"Umweltmanagement",
+    "skills.tag.envaspects":"Umweltaspekte &amp; -auswirkungen",
+    "skills.tag.wastereduction":"Abfallreduzierung",
+    "skills.tag.energyeff":"Energieeffizienz",
+    "skills.tag.sustaintravel":"Nachhaltige Reiseinitiativen",
+    "skills.cat.datasoftware":"Daten &amp; Software",
+    "skills.tag.excelbdvanced":"Excel (Fortgeschritten)",
+    "skills.tag.dataanalysis":"Datenanalyse",
+    "skills.tag.pptadvanced":"PowerPoint (Fortgeschritten)",
+    "skills.tag.powerbi":"Power BI (Grundkenntnisse)",
+    "skills.cat.aquaticenv":"Aquatisch/Umwelt",
+    "skills.tag.fishexposure":"Fisch-Expositionstests",
+    "skills.tag.aquatictox":"Aquatische Toxikologie",
+    "skills.tag.microscopy":"Mikroskopie",
+    "skills.tag.livecell":"Lebendzellzählung",
+    "skills.tag.watersampling":"Wasser-/Abwasserprobenahme",
+    "skills.tag.membranefilt":"Membranfiltration",
+    "skills.cat.laboratory":"Labor",
+    "skills.tag.kirbybauer":"Kirby-Bauer-Empfindlichkeitstestung",
+    "skills.tag.sopwork":"SOP-basierte Arbeit",
+    "skills.cat.analyticaltech":"Analytische Verfahren",
+    "skills.tag.bradford":"Bradford-/BCA-Assays",
+    "skills.cat.molbiotech":"Molekularbiologie &amp; Biotechnologie",
+    "skills.cat.databioinfo":"Datenanalyse &amp; Bioinformatik",
+    "skills.tag.scidataanalysis":"Wissenschaftliche Datenanalyse",
+    "skills.tag.dataviz":"Datenvisualisierung",
+    "skills.tag.statseval":"Statistische Auswertung",
+    "skills.cat.scientificwork":"Wissenschaftliches Arbeiten",
+    "skills.tag.litresearch":"Literaturrecherche",
+    "skills.tag.scireporting":"Wissenschaftliche Berichterstattung",
+    "skills.tag.structdoc":"Strukturierte Dokumentation",
+    "skills.tag.dbmgmt":"Datenbankverwaltung",
+    "skills.tag.evalresults":"Ergebnisauswertung",
+    "skills.cat.technical":"Technisch",
+    "skills.tag.excelbalance":"MS Excel (Massen-/Energiebilanzen)",
+    "skills.tag.matlab":"MATLAB (Grundlagen)",
+    "skills.tag.plc":"Grundkenntnisse SPS",
+    "skills.tag.lca":"Ökobilanz (LCA) Grundlagen",
+    "skills.cat.scientific":"Wissenschaftlich",
+    "skills.tag.indbiotech":"Industrielle Biotechnologie",
+    "skills.tag.envtech":"Umwelttechnologie",
+    "skills.tag.techassess":"Technologiebewertung",
+    "skills.tag.scitechdoc":"Wissenschaftliche Forschung &amp; Technische Dokumentation",
+    "skills.cat.communication":"Kommunikation",
+    "skills.tag.techwriting":"Technisches Schreiben",
+    "skills.tag.presentations":"Präsentationen",
+    "skills.tag.explaining":"Komplexe Themen Erklären",
+    "skills.tag.interdisc":"Interdisziplinäre Kommunikation",
+    "skills.cat.qualdoc":"Qualität &amp; Dokumentation",
+    "skills.tag.gmpfund":"GMP-Grundlagen",
+    "skills.tag.sophandling":"SOP-Handhabung",
+    "skills.tag.dms":"Elektronische Dokumentenmanagementsysteme (DMS)",
+    "skills.tag.auditfile":"Vorbereitung von Audit-Unterlagen",
+    "skills.tag.excelpivot":"MS Excel — Pivot-Tabellen &amp; Datenprüfung",
+    "skills.tag.sapqm":"SAP QM (Grundkenntnisse)",
+    "skills.tag.limsbasic":"LIMS (Grundkenntnisse)",
+    "skills.cat.envlab":"Umweltlabor",
+    "skills.tag.soilprep":"Bodenprobenvorbereitung",
+    "skills.tag.wwanalysis":"Abwasseranalyse",
+    "skills.tag.filtration":"Filtration",
+    "skills.tag.homogenization":"Homogenisierung",
+    "skills.tag.weighing":"Wägung",
+    "skills.tag.heavymetal":"Schwermetallentfernung",
+    "skills.tag.envmonitoring":"Umweltmonitoring",
+    "skills.tag.watertreat":"Wasserbehandlungsanalyse",
+    "skills.cat.analytical":"Analytische Verfahren",
+    "skills.tag.sampleprep":"Probenvorbereitung",
+    "skills.tag.filtration2":"Filtration",
+    "skills.tag.centrifuge2":"Zentrifugation",
+    "skills.cat.microbiology":"Mikrobiologie",
+    "skills.tag.envmicro":"Umweltmikrobiologie",
+    "skills.tag.soilmicro":"Bodenmikrobiologie",
+    "skills.tag.indmicro":"Industrielle Mikrobiologie",
+    "awards.eyebrow":"Anerkennung",
+    "awards.title":"Auszeichnungen &amp; <em>Ehrungen</em>",
+    "awards.1":"Goldmedaille — Akademische Exzellenz, B.Sc. Mikrobiologie, CUST (Rang 1, Dez. 2022)",
+    "awards.2":"Beste Absolventin der Universität und des Fachbereichs während des gesamten Studiums",
+    "awards.3":"Vollstipendium — PKR 60.000 pro Semester, CUST (2019–2023)",
+    "awards.4":"5× Dean's Honors während des Bachelorstudiums",
+    "awards.5":"Staatsstipendium — HSSC (2016–2018)",
+    "awards.6":"Leistungsstipendium — SSC (2014–2016)",
+    "awards.7":"Durchgehend Klassenbeste von Klasse 1 bis 8",
+    "proj.eyebrow":"Forschung",
+    "proj.title":"Projekte &amp; <em>Präsentationen</em>",
+    "proj.1.title":"Whole-Genome-Sequenzierung bakterieller Genome",
+    "proj.1.text":"Sequenzierung und Analyse bakterieller Genome zur Untersuchung genetischer Variationen und Resistenzmechanismen.",
+    "proj.2.title":"E-Protein von COVID-19 — Bioinformatische Analyse",
+    "proj.2.text":"Funktionelle Analyse des SARS-CoV-2-E-Proteins mittels bioinformatischer Werkzeuge. Coursera-zertifiziert, 95%+.",
+    "proj.3.title":"Frühschorf bei Kartoffeln — Punjab",
+    "proj.3.text":"Analyse der Auswirkungen von Alternaria solani auf den Ernteertrag und Identifizierung wirksamer Behandlungsstrategien.",
+    "proj.4.title":"Haltbarkeitsverlängerung von Guaven durch Erhitzung",
+    "proj.4.text":"Optimierung von Erhitzungsverfahren zur Reduzierung des mikrobiellen Verderbs und Verlängerung der Haltbarkeit nach der Ernte.",
+    "proj.5.title":"Genetische Analyse der Antibiotikaresistenz bei Mikroben",
+    "proj.5.text":"Präsentation mikrobieller Resistenzmechanismen und evidenzbasierter Strategien zur Bekämpfung der Antibiotikaresistenz.",
+    "proj.6.title":"Auswirkungen der Schizophrenie auf die Gesundheit",
+    "proj.6.text":"Detaillierter Forschungsbericht über Ätiologie, Symptome und aktuelle pharmakologische Ansätze.",
+    "comm.eyebrow":"Außerhalb des Labors",
+    "comm.title":"Engagement &amp; <em>Aktivitäten</em>",
+    "comm.vol.title":"Ehrenamt &amp; Gemeinschaft",
+    "comm.vol.text":"Ehrenamtliche Mitarbeit bei der Alkhidmat-Stiftung — kostenlose medizinische Hilfe und Nahrung für bedürftige Gemeinschaften. Zwei Jahre unentgeltlicher Unterricht zur Unterstützung finanziell benachteiligter Studierender. Konferenzmoderatorin &amp; Tutorenguide bei einer NGO für Gemeinschaftsentwicklung. Mitglied der studentischen Fachvereinigung; Organisation einer Seminarreihe zu regulatorischen Karrieren. Mitglied der studentischen Arbeitsgruppe Qualität &amp; Compliance der Universität (seit 2024).",
+    "comm.ev.title":"Veranstaltungen &amp; Sport",
+    "comm.ev.text":"Veranstaltungsorganisatorin — Life Sciences Society &amp; Uni-Sportwoche. Veranstaltungsassistentin, Genix Society (Life-Science-Fachbereich). Cricket-Kapitänin — führte Teams zu zwei Turniersiegen. Sportabzeichen: Cricket, Fußball, Tischtennis, Badminton.",
+    "ref.eyebrow":"Referenzen",
+    "ref.title":"Akademische <em>Referenzen</em>",
+    "ref.1.role":"Betreuer der Abschlussarbeit",
+    "ref.2.role":"Akademische Referenz",
+    "ref.note":"Vollständige Kontaktdaten auf Anfrage erhältlich.",
+    "contact.eyebrow":"Kontakt",
+    "contact.title":"Nehmen Sie <em>Kontakt auf</em>",
+    "contact.email.label":"E-Mail",
+    "contact.phone.label":"Deutschland",
+    "contact.loc.label":"Standort",
+    "contact.uni.label":"Universität",
+    "contact.cta":"✉ E-Mail senden",
+    "footer.text":"© 2026 Arooj Fatima · Qualitätssicherung · M.Sc. Biotechnologie · Hochschule Offenburg"
+  }
+};
+
+Object.assign(translations.de, {
+ "hero.eyebrow": "Funktionale Biomaterialien · Zellkultur · Biohybride Systeme",
+ "hero.loc": "📍 <b>Offenburg, Deutschland</b> (umzugsbereit) · Verfügbar 16–20 Std./Woche, vor Ort in Stuttgart",
+ "hero.badge": "Offen für Stellen als studentische Forschungsassistenz in funktionalen Biomaterialien",
+ "stat.1.num": "Goldmedaille · Rang 1",
+ "stat.1.label": "B.Sc. Mikrobiologie",
+ "stat.2.num": "2 Jahre",
+ "stat.2.label": "Praktische Erfahrung in der Säugetierzellkultur",
+ "stat.3.num": "3 Zelllinien",
+ "stat.3.label": "NIH/3T3, HEK293 und C2C12 kultiviert",
+ "stat.4.num": "ISO 10993-5",
+ "stat.4.label": "Prinzipien für In-vitro-Biokompatibilitätsassays",
+ "about.text": "Masterstudentin der Biotechnologie mit zwei Jahren praktischer Erfahrung in der Säugetierzellkultur und großem Interesse an funktionalen Biomaterialien und biohybriden Systemen. Erfahren in der routinemäßigen Zellpassage, in-vitro-Biokompatibilitätsassays, der Herstellung von Medien und Puffern sowie der Labordokumentation. Zuverlässig, gut organisiert und routiniert in internationalen, interdisziplinären Forschungsteams. Auf der Suche nach einer Stelle als studentische Forschungsassistenz in der Forschung zu funktionalen Biomaterialien und im Biolabor.",
+ "about.tag.bsl2": "🧫 Zellkultur &amp; Biomaterialien",
+ "exp.job1.role": "Studentische Hilfskraft",
+ "exp.job1.org": "Shaheen Lab and Diagnostic Center, Pakistan",
+ "exp.job1.bullets": "<li>Kultivierung adhärenter Säugetierzelllinien (NIH/3T3, HEK293, C2C12): routinemäßige Passagierung, Kryokonservierung, Mykoplasmentests und Kontaminationskontrolle unter sterilen Bedingungen.</li><li>Durchführung von in-vitro-Biokompatibilitätsassays (Live/Dead-Färbung, MTT-/Resazurin-Viabilität, LDH-Zytotoxizität) an Polymer- und Hydrogelproben nach den Prinzipien der ISO 10993-5.</li><li>Unterstützung bei der physikochemischen Charakterisierung: Rheologie, Zugprüfung, DSC, Quellungs- und Abbaustudien.</li><li>Herstellung und Sterilisation von Kulturmedien, Puffern und Reagenzien; Verwaltung von Verbrauchsmaterialbestand und Nachbestelllisten für ein Labor mit 10 Personen, wodurch Lieferengpässe reduziert wurden.</li><li>Dokumentation von Verfahren und Zellaufzeichnungen in einem elektronischen Laborbuch; Datenanalyse mit Excel, Python und GraphPad Prism.</li>",
+ "exp.job2.role": "Laborpraktikantin",
+ "exp.job2.org": "Fauji Foundation Hospital, Pakistan",
+ "exp.job2.bullets": "<li>Unterstützung bei zellbasierten Assays und der Medienherstellung unter SOP- und GLP-Bedingungen.</li><li>Schulung in Laborsicherheit, Abfallhandhabung und Gerätewartung (Sicherheitswerkbänke, Inkubatoren, Zentrifugen und Autoklav).</li>",
+ "edu.msc.date": "10/2025 – heute",
+ "edu.msc.list": "<li><strong>Relevante Studieninhalte:</strong> Biomaterialwissenschaft, Zellkulturtechniken, Biophysikalische Charakterisierungsmethoden, Industrielle Mikrobiologie.</li>",
+ "edu.bsc.list": "<li><strong>Goldmedaillengewinnerin · Rang 1 · Vollstipendium</strong></li><li><strong>Bachelorarbeit:</strong> Antibiotikaresistenz in Krankenhausumgebungen.</li>",
+ "skills.tag.en": "Englisch — Ausgezeichnet (C1)",
+ "footer.text": "© 2026 Arooj Fatima · Funktionale Biomaterialien · M.Sc. Biotechnologie · Hochschule Offenburg",
+ "skills.tag.de": "Deutsch — Gut (B1)",
+ "exp.job3.role": "Lehrerin für Naturwissenschaften und Biologie &amp; Betreuerin",
+ "exp.job3.org": "The Education Hub, Pakistan",
+ "exp.job3.bullets": "<li>Unterricht in Naturwissenschaften und Biologie sowie Betreuung von Lehrpersonal und Lernenden.</li><li>Organisation akademischer Aktivitäten und Kommunikation mit Schülern und Eltern.</li>",
+ "comm.vol.text": "Schatzmeisterin eines Studierendenverbands (60 Mitglieder), 2023–2025: Budgetverfolgung, Veranstaltungsorganisation und Sitzungsprotokolle. Ehrenamtliche Mitarbeit bei der Alkhidmat-Stiftung — kostenlose medizinische Hilfe und Nahrung für bedürftige Gemeinschaften. Zwei Jahre unentgeltlicher Unterricht zur Unterstützung finanziell benachteiligter Studierender. Konferenzmoderatorin &amp; Tutorenguide bei einer NGO für Gemeinschaftsentwicklung. Mitglied der studentischen Fachvereinigung; Organisation einer Seminarreihe zu regulatorischen Karrieren. Mitglied der studentischen Arbeitsgruppe Qualität &amp; Compliance der Universität (seit 2024).",
+ "comm.ev.text": "Veranstaltungsorganisatorin — Life Sciences Society &amp; Uni-Sportwoche. Veranstaltungsassistentin, Genix Society (Life-Science-Fachbereich). Cricket-Kapitänin — führte Teams zu zwei Turniersiegen. Sportabzeichen: Cricket, Fußball, Tischtennis, Badminton. Hobbys: Brett- und Schachspiele (strukturiertes Denken), Wandern.",
+ "skills.cat.cc": "Zellkultur",
+ "skills.tag.cc0": "Adhärente und Suspensionskulturen",
+ "skills.tag.cc1": "Passagierung",
+ "skills.tag.cc2": "Kryokonservierung",
+ "skills.tag.cc3": "2D- und 3D-Kultur",
+ "skills.tag.cc4": "Aseptische Arbeitstechnik",
+ "skills.tag.cc5": "Mykoplasmentests",
+ "skills.cat.bc": "Biomaterialcharakterisierung",
+ "skills.tag.bc0": "Rheologie",
+ "skills.tag.bc1": "Zug- und Druckprüfung",
+ "skills.tag.bc2": "DSC",
+ "skills.tag.bc3": "FTIR",
+ "skills.tag.bc4": "Quellungs- und Stabilitätsstudien",
+ "skills.cat.as": "Assays",
+ "skills.tag.as0": "Zellviabilität und Zytotoxizität",
+ "skills.tag.as1": "Fluoreszenzmikroskopie",
+ "skills.tag.as2": "ELISA",
+ "skills.tag.as3": "Immunfärbung",
+ "skills.cat.mb": "Molekularbiologie",
+ "skills.tag.mb0": "DNA-/RNA-Extraktion",
+ "skills.tag.mb1": "PCR",
+ "skills.tag.mb2": "Elektrophorese",
+ "skills.tag.mb3": "Proteinquantifizierung",
+ "skills.tag.mb4": "Western Blot",
+ "skills.cat.lo": "Laborbetrieb",
+ "skills.tag.lo0": "Medien- und Pufferherstellung",
+ "skills.tag.lo1": "Bestandsverwaltung",
+ "skills.tag.lo2": "SOPs",
+ "skills.tag.lo3": "GLP",
+ "skills.tag.lo4": "Elektronische Laborbücher",
+ "skills.cat.sw": "Software",
+ "skills.tag.sw0": "Python",
+ "skills.tag.sw1": "ImageJ/Fiji",
+ "skills.tag.sw2": "GraphPad Prism",
+ "skills.tag.sw3": "Origin",
+ "skills.tag.sw4": "MS Office",
+ "skills.cat.ri": "Forschungsinteressen",
+ "skills.tag.ri0": "Funktionale Biomaterialien",
+ "skills.tag.ri1": "Zell-Material-Interaktionen",
+ "skills.tag.ri2": "Biohybride Robotik",
+ "skills.tag.ri3": "Experimentelle Biologie"
+});
+
+const originals = {};
+document.querySelectorAll('[data-i18n]').forEach(el => originals[el.getAttribute('data-i18n')] = el.innerHTML);
+document.querySelectorAll('[data-i18n-html]').forEach(el => originals[el.getAttribute('data-i18n-html')] = el.innerHTML);
+
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    el.innerHTML = (lang === 'de' && translations.de[key]) ? translations.de[key] : originals[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    el.innerHTML = (lang === 'de' && translations.de[key]) ? translations.de[key] : originals[key];
+  });
+}
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('main section').forEach(sec => revealObserver.observe(sec));
+</script>
+
+</body>
+</html>
